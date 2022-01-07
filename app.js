@@ -1,12 +1,8 @@
 // Modules
 
-const JOHN = "John";
-const PETER = "Peter";
-
-const sayHi = (userName) => {
-  console.log(`Hello there :${userName}`);
-};
+const names = require('./3-variables');
+const sayHi = require('./4-functions')
 
 sayHi("Emmei");
-sayHi(PETER);
-sayHi(JOHN);
+sayHi(names.PETER);
+sayHi(names.JOHN);
