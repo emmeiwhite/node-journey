@@ -1,14 +1,15 @@
-// Let's look into path module
-const path = require('path');
+//  fs module: 1) sync vs 2 async
 
-console.log(path.sep);
+const {readFileSync,writeFileSync} = require('fs');
+const { readFile } = require('fs/promises');
 
-const filePath = path.join('/content','sub-folder','test.txt');
-console.log(filePath);
+const first = readFileSync('./content/first.txt', 'utf8');
+const second = readFileSync('./content/second.txt', 'utf8');
 
-const base = path.basename(filePath);
-console.log(base);
 
-const absolute = path.resolve(__dirname,'content','sub-folder','test.txt');
-console.log(absolute);
+console.log(first, second);
 
+writeFileSync(
+    './content/result-sync.txt',
+    `Here is the result: ${first}, ${second}`,
+)
