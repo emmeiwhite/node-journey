@@ -1,15 +1,10 @@
-//  fs module: 1) sync vs 2 async
+// http module to create our own server
 
-const {readFileSync,writeFileSync} = require('fs');
+const http = require('http');
 
-const first = readFileSync('./content/first.txt', 'utf8');
-const second = readFileSync('./content/second.txt', 'utf8');
+const server = http.createServer((req,res)=>{
+    res.write('Welcome to the homepage');
+    res.end();
+});
 
-
-console.log(first, second);
-
-writeFileSync(
-    './content/result-sync.txt',
-    `Here is the result: ${first}, ${second}`,
-    {flag:'a'}
-);
+server.listen(5000);
