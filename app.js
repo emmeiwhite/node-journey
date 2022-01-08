@@ -1,17 +1,15 @@
-// Modules
+// Let's look into O/S module provided by node
 
-const names = require('./3-variables');
-const sayHi = require('./4-functions');
-const data = require('./6. alternate-way');
+const os = require('os');
 
-sayHi("Emmei");
-sayHi(names.PETER);
-sayHi(names.JOHN);
+console.log(os.userInfo());
+console.log(`System uptime is ${os.uptime()}`);
 
-// alternate way to export- example
-console.log(data);
+const systemInfo = {
+    type: os.type(),
+    release: os.release(),
+    usedMem: os.totalmem(),
+    freeMem: os.freemem()
+}
 
-
-// Mind-Boggling way to call this kind of file
-
-require('./7-mind-boggling-way');
+console.log(systemInfo);
