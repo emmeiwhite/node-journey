@@ -1,15 +1,14 @@
-// Let's look into O/S module provided by node
+// Let's look into path module
+const path = require('path');
 
-const os = require('os');
+console.log(path.sep);
 
-console.log(os.userInfo());
-console.log(`System uptime is ${os.uptime()}`);
+const filePath = path.join('/content','sub-folder','test.txt');
+console.log(filePath);
 
-const systemInfo = {
-    type: os.type(),
-    release: os.release(),
-    usedMem: os.totalmem(),
-    freeMem: os.freemem()
-}
+const base = path.basename(filePath);
+console.log(base);
 
-console.log(systemInfo);
+const absolute = path.resolve(__dirname,'content','sub-folder','test.txt');
+console.log(absolute);
+
