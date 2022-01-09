@@ -9,3 +9,4 @@ const items = [12,[23,[54,67,[9]]]]; // Nested Array
 
 const flattenedArray = _.flattenDeep(items);
 console.log(flattenedArray);
+console.log("Node is running to look for our changes");
