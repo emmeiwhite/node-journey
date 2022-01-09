@@ -1,25 +1,11 @@
-// http module to create our own server
+// npm: node package manager contains different open source code for us to use.
+// modules, packages, dependencies are refer to pacakge itself.
 
-const http = require('http');
+// We start from package.json [A manifest file to give information about the project]
 
-const server = http.createServer((req,res)=>{
-    if(req.url === '/'){
-        res.write(`<h1> Welcome to the Home Page </h1>`);
-        res.end();
-    }else if(req.url === '/about'){
-        res.write(`<h1> About Page </h1>
-           <p> We help people and improve their lives by providing them free Education</p>
-        `);
-        res.end();
-    }else {
-        res.write(`
-        <h1> OOPS !!!</h1>
-        <p> You are looking for a wrong page </p>
-  
-        <button> <a href="/">Back to Home</a> </button>
-      `);
-      res.end();
-    }
-});
+const _ = require('lodash');
 
-server.listen(5000);
+const items = [12,[23,[54,67,[9]]]]; // Nested Array
+
+const flattenedArray = _.flattenDeep(items);
+console.log(flattenedArray);
